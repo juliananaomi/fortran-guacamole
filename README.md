@@ -1,3 +1,3 @@
 # urban-guacamole
 
-Olá, estou aprendendo a usar o GitHub. Irei colocar todos os meus códigos de Introdução à Física Computacional.
+Olá, aqui estão depositados todos os códigos da disciplina Introdução à Física Computacional, cursada com o Prof. Francisco Alcaraz, em 2020.
