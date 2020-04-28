@@ -27,8 +27,8 @@ do i=1, 14
      erro5 = abs(df2(xp) - d2sf(xp,vh(i)))
      erro6 = abs(df3(xp) - d3asf(xp,vh(i)))
 
-     3 format(6f16.11)
-     write(20,3) erro1, erro2, erro3, erro4, erro5, erro6
+     3 format(f11.8, 6f16.11)
+     write(20,3) vh(i), erro1, erro2, erro3, erro4, erro5, erro6
 end do
 close(20)
 End Program Tarefa_A
