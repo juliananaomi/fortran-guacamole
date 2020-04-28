@@ -1,7 +1,7 @@
 Program Tarefa_A
 
 IMPLICIT REAL*8 (a-h,o-z) !dupla precisão
-dimension vh(1:14)
+dimension vh(1:14)	!vetor que armazena os valores de h
 
 f(x) = dsinh(2.d0*x)*dsin(x/4.d0)!função
 df(x) = 2.d0*dcosh(2.d0*x)*dsin(x/4.d0)+(1.d0/4.d0)*dcos(x/4.d0)*dsinh(2.d0*x)!derivada 1
@@ -20,14 +20,14 @@ xp=1.d0 !definir o ponto da derivada
 
 open(20, file = 'saida-tarefaA-10260434.txt')
 do i=1, 14
-     erro1 = abs(df(xp) - ds3f(xp,vh(i)))
+     erro1 = abs(df(xp) - ds3f(xp,vh(i)))	!diferença entre o valor exato
      erro2 = abs(df(xp) - df2f(xp,vh(i)))
      erro3 = abs(df(xp) - dt2f(xp,vh(i)))
      erro4 = abs(df(xp) - ds5f(xp,vh(i)))
      erro5 = abs(df2(xp) - d2sf(xp,vh(i)))
      erro6 = abs(df3(xp) - d3asf(xp,vh(i)))
 
-     3 format(6f16.13)
+     3 format(6f16.11)
      write(20,3) erro1, erro2, erro3, erro4, erro5, erro6
 end do
 close(20)
