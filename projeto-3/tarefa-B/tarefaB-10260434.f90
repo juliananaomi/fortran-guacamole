@@ -1,14 +1,15 @@
 Program Tarefa_B
 
 IMPLICIT real*8 (a-h,o-z)
-dimension N(1:11)
+dimension N(1:11)	!armazena valores de N
 
-f(x) = dexp(x/2)*dcos(pi*x)
-fi(x) = (dexp(x/2)/(pi**2 + 1.d0/4))*(pi*dsin(pi*x) + dcos(pi*x)/2)
+f(x) = dexp(x/2)*dcos(pi*x)	!função
+!integral (p/ comparar com o valor exato)
+fi(x) = (dexp(x/2)/(pi**2 + 1.d0/4))*(pi*dsin(pi*x) + dcos(pi*x)/2)	
 
 a= 0.d0		!limites de integração
 b= 1.d0
-pi = 4*datan(1.d0)
+pi = 4.d0*datan(1.d0)
 
 rfi = fi(b)-fi(a) !valor exato
 
@@ -19,7 +20,7 @@ do j=1, 11
 	soma = 0.d0
 	soma1 = 0.d0
 	soma2 = 0.d0
-	h = (b-a)/N(j)
+	h = (b-a)/N(j)	!valores de h p/ cada N
 	
 	!regra do trapézio
 	do i=0, N(j)-1
