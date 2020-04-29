@@ -29,7 +29,7 @@ do j=1, 11
 	end do
 	
 	!regra de Simpson
-	do i=2, N(j)-2, 2
+	do i=1, N(j)-1, 2
 	xi1 = a + i*h
 	soma1 = soma1 + (h/3)*(f(xi1+h)+4*f(xi1)+f(xi1-h))
 	end do
@@ -43,9 +43,8 @@ do j=1, 11
 	soma= abs(soma-rfi)
 	soma1 = abs(soma1-rfi)
 	soma2 = abs(soma2 -rfi)
-	
-	3 format(i4,3f15.11)
-	write(10,3) N(j),soma, soma1, soma2
+
+	write(10,*) N(j),soma, soma1, soma2
 end do
 close(10)
 End Program Tarefa_B
