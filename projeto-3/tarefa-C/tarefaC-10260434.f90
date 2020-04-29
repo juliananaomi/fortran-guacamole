@@ -55,7 +55,7 @@ do d = a, (b-2.d0*h), h	!raciocínio análogo
 	k = 0
 	if (f(xright)*f(xleft) .lt. 0) then
 		do while (desvio .gt. erro)
-			xleft = xright - f(xright)*((xright-(xright+h))/(f(xright)-f(xright+h)))
+			xleft = xright - f(xright)*((xright-(xright-h))/(f(xright)-f(xright-h)))
 			desvio = abs(f(xleft)-f(xright))
 			xright= xleft 
 			k = k + 1
